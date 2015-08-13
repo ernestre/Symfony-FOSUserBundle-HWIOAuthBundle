@@ -1,72 +1,57 @@
-Symfony Standard Edition
+Facebook / Google login in Symfony with [HWIOAuthBundle][1] and [FOSUserBundle][2]
 ========================
-
-Welcome to the Symfony Standard Edition - a fully-functional Symfony2
-application that you can use as the skeleton for your new applications.
-
-For details on how to download and get started with Symfony, see the
-[Installation][1] chapter of the Symfony Documentation.
-
 What's inside?
 --------------
 
-The Symfony Standard Edition is configured with the following defaults:
+Base symfony 2.7.3 setup with `HWIOAuthBundle` and `FOSUserBundle` configured.
 
-  * An AppBundle you can use to start coding;
+Instructions 
+--------------
+**Base configuration**
+* Clone the repo.
+* Do `comsposer install`.
+* Rename `app/config/parameters.yml.dist` to `app/config/parameters.yml` and fill in your database info.
+* (Optional) Edit the `User` entity to your likings in `src/AppBundle/Entity/User.php`.
+* Update your database schema. `php app/console doctrine:schema:update --force`
+* (Optional) uncomment 'if' block in `web/app_dev.php` and add your IP there, so that only you can access your app.
 
-  * Twig as the only configured template engine;
 
-  * Doctrine ORM/DBAL;
+**Facebook configuration**
+* [Create a new facebook app][3]
+* Get your new facebook app's `App ID` and `App Secret`
+* Set the `client_id : "App ID"` and `client_secret : "App Secret"` in `app/config/config.yml`
 
-  * Swiftmailer;
+How to use it
+--------------
+**Paths**
 
-  * Annotations enabled for everything.
+*Base*
+* `/login` - User login.
+* `/logout` - User login.
+* `/register` - New user registration.
+* `/resetting/request` - Password recovery.
+* `/profile` - User's profile page.
+* `/profile/edit` - User's change info page.
 
-It comes pre-configured with the following bundles:
+*Providers*
+* `/login/` - Links to available auth methods. ( Note the slash after `login` ).
+* `/login/{provider}` - Direct auth link to specific provider, (`/login/facebook`).
 
-  * **FrameworkBundle** - The core Symfony framework bundle
+*Console*
 
-  * [**SensioFrameworkExtraBundle**][6] - Adds several enhancements, including
-    template and routing annotation capability
+You can also create / activate / deactivate / delete / promote / demote / edit, users via the command line.
+* `php app/console fos:user:create newuser`
+* `php app/console fos:user:promote newuser ROLE_ADMIN`
 
-  * [**DoctrineBundle**][7] - Adds support for the Doctrine ORM
+**How it works**
+* If the user is not registered on the website, he can use the provider ( facebook / google ) links to register on the website. After a successful login, the user is automatically registered and logged in.
+* If the user is already registered via the base registration link, he can link his account with his provider's account ( facebook / google ). He can do that by logging in via the base login link and the visiting `/login/{provider}` (`/login/facebook`). The provider's ID will be assigned to the Users account and the user now can login with his credentials or his assigned provider accounts.
 
-  * [**TwigBundle**][8] - Adds support for the Twig templating engine
+========================
 
-  * [**SecurityBundle**][9] - Adds security by integrating Symfony's security
-    component
 
-  * [**SwiftmailerBundle**][10] - Adds support for Swiftmailer, a library for
-    sending emails
+[1]:  https://github.com/FriendsOfSymfony/FOSUserBundle
+[2]:  https://github.com/hwi/HWIOAuthBundle
+[3]:  https://developers.facebook.com/
 
-  * [**MonologBundle**][11] - Adds support for Monolog, a logging library
 
-  * [**AsseticBundle**][12] - Adds support for Assetic, an asset processing
-    library
-
-  * **WebProfilerBundle** (in dev/test env) - Adds profiling functionality and
-    the web debug toolbar
-
-  * **SensioDistributionBundle** (in dev/test env) - Adds functionality for
-    configuring and working with Symfony distributions
-
-  * [**SensioGeneratorBundle**][13] (in dev/test env) - Adds code generation
-    capabilities
-
-  * **DebugBundle** (in dev/test env) - Adds Debug and VarDumper component
-    integration
-
-All libraries and bundles included in the Symfony Standard Edition are
-released under the MIT or BSD license.
-
-Enjoy!
-
-[1]:  https://symfony.com/doc/2.7/book/installation.html
-[6]:  https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/index.html
-[7]:  https://symfony.com/doc/2.7/book/doctrine.html
-[8]:  https://symfony.com/doc/2.7/book/templating.html
-[9]:  https://symfony.com/doc/2.7/book/security.html
-[10]: https://symfony.com/doc/2.7/cookbook/email.html
-[11]: https://symfony.com/doc/2.7/cookbook/logging/monolog.html
-[12]: https://symfony.com/doc/2.7/cookbook/assetic/asset_management.html
-[13]: https://symfony.com/doc/2.7/bundles/SensioGeneratorBundle/index.html
