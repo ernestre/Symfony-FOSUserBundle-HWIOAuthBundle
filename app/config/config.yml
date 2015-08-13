@@ -10,7 +10,7 @@ parameters:
 
 framework:
     #esi:             ~
-    #translator:      { fallbacks: ["%locale%"] }
+    translator:      { fallbacks: ["%locale%"] }
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -98,16 +98,16 @@ hwi_oauth:
         properties:
             # these properties will be used/redefined later in the custom FOSUBUserProvider service.
             facebook: facebook_id
-            # google: google_id
+            google: google_id
     resource_owners:
         facebook:
             type:                facebook
             client_id:           "xxxxxxxxxxx"
             client_secret:       "xxxxxxxxxxx"
             scope:               ""
-        # google:
-        #     type:                google
-        #     client_id:           "%google_app_id%"
-        #     client_secret:       "%google_app_secret%"
-        #     scope:               "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile"
+        google:
+            type:                google
+            client_id:           "xxxxxxxxxxx"
+            client_secret:       "xxxxxxxxxxx"
+            scope:               "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile"
     # here you will add one (or more) configurations for resource owners
