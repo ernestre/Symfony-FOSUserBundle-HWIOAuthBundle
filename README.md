@@ -3,23 +3,20 @@ Facebook / Google login in Symfony with [HWIOAuthBundle][1] and [FOSUserBundle][
 What's inside?
 --------------
 
-Base symfony 2.7.3 setup with `HWIOAuthBundle` and `FOSUserBundle` configured.
+Base symfony 2.8.\* setup with `HWIOAuthBundle` and `FOSUserBundle` configured.
 
 Instructions 
 --------------
-**Base configuration**
-* Clone the repo.
-* Do `comsposer install`.
-* Rename `app/config/parameters.yml.dist` to `app/config/parameters.yml` and fill in your database info.
-* (Optional) Edit the `User` entity to your likings in `src/AppBundle/Entity/User.php`.
-* Update your database schema. `php app/console doctrine:schema:update --force`
-* (Optional) uncomment 'if' block in `web/app_dev.php` and add your IP there, so that only you can access your app.
-
-
 **Facebook configuration**
 * [Create a new facebook app][3]
 * Get your new facebook app's `App ID` and `App Secret`
-* Set the `client_id : "App ID"` and `client_secret : "App Secret"` in `app/config/config.yml`
+
+**Base configuration**
+* Clone the repo.
+* Do `comsposer install`.
+* Enter facebook appId and appSecret during parameters setup.
+* (Optional) Edit the `User` entity to your likings in `src/AppBundle/Entity/User.php`.
+* Update your database schema. `php app/console doctrine:schema:update --force`
 
 How to use it
 --------------

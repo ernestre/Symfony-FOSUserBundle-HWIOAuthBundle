@@ -17,3 +17,10 @@ parameters:
 
     # A secret key that's used to generate certain security-related tokens
     secret:            ThisTokenIsNotSoSecretChangeIt
+   
+    #HWIOAuth parameters
+    facebook_client_id: app_id 
+    facebook_client_secret: app_secret
+    
+    google_client_id: app_id
+    google_client_secret: app_secret

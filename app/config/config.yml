@@ -102,12 +102,12 @@ hwi_oauth:
     resource_owners:
         facebook:
             type:                facebook
-            client_id:           "xxxxxxxxxxx"
-            client_secret:       "xxxxxxxxxxx"
+            client_id:           "%facebook_client_id%"
+            client_secret:       "%facebook_client_secret%"
             scope:               ""
         google:
             type:                google
-            client_id:           "xxxxxxxxxxx"
-            client_secret:       "xxxxxxxxxxx"
+            client_id:           "%google_client_id%"
+            client_secret:       "%google_client_secret%"
             scope:               "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile"
     # here you will add one (or more) configurations for resource owners
