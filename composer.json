@@ -1,6 +1,6 @@
 {
-    "name": "vagrant/turno-rest",
-    "license": "proprietary",
+    "name": "symfony/framework-standard-edition",
+    "license": "MIT",
     "type": "project",
     "autoload": {
         "psr-4": {
