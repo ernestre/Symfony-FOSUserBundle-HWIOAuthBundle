@@ -6,7 +6,7 @@ env:
     - SYMFONY_ENV=prod
 
 install:
-    - composer install --prefered-source
+    - composer install --prefer-source
 
 script: phpunit -c app/
 
