@@ -1,5 +1,8 @@
 Facebook / Google login in Symfony with [HWIOAuthBundle][1] and [FOSUserBundle][2]
 ========================
+
+[![Build Status](https://travis-ci.org/ernestre/Symfony-FOSUserBundle-HWIOAuthBundle.svg?branch=master)](https://travis-ci.org/ernestre/Symfony-FOSUserBundle-HWIOAuthBundle)
+
 What's inside?
 --------------
 
