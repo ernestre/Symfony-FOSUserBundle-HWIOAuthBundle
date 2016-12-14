@@ -6,7 +6,7 @@ Facebook / Google login in Symfony with [HWIOAuthBundle][1] and [FOSUserBundle][
 What's inside?
 --------------
 
-Base symfony 2.8.\* setup with `HWIOAuthBundle` and `FOSUserBundle` configured.
+Base symfony 3.1.\* setup with `HWIOAuthBundle` and `FOSUserBundle` configured.
 
 Instructions
 --------------
