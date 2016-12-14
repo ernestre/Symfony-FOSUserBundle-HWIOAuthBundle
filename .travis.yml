@@ -5,6 +5,9 @@ php:
 env:
     - SYMFONY_ENV=prod
 
+before_install:
+      - mysql -e 'CREATE DATABASE symfony;'
+
 install:
     - composer install --no-interaction --prefer-source
 
