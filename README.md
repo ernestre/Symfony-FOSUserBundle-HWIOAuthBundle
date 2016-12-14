@@ -6,9 +6,9 @@ Facebook / Google login in Symfony with [HWIOAuthBundle][1] and [FOSUserBundle][
 What's inside?
 --------------
 
-Base symfony 2.8.\* setup with `HWIOAuthBundle` and `FOSUserBundle` configured.
+Base symfony 3.1.\* setup with `HWIOAuthBundle` and `FOSUserBundle` configured.
 
-Instructions 
+Instructions
 --------------
 **Facebook configuration**
 * [Create a new facebook app][3]
@@ -47,11 +47,7 @@ You can also create / activate / deactivate / delete / promote / demote / edit, 
 * If the user is not registered on the website, he can use the provider ( facebook / google ) links to register on the website. After a successful login, the user is automatically registered and logged in.
 * If the user is already registered via the base registration link, he can link his account with his provider's account ( facebook / google ). He can do that by logging in via the base login link and the visiting `/login/{provider}` (`/login/facebook`). The provider's ID will be assigned to the Users account and the user now can login with his credentials or his assigned provider accounts.
 
-========================
-
-
 [1]:  https://github.com/FriendsOfSymfony/FOSUserBundle
 [2]:  https://github.com/hwi/HWIOAuthBundle
 [3]:  https://developers.facebook.com/
-
 
