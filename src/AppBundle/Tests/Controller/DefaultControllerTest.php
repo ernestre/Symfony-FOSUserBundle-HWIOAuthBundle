@@ -32,7 +32,7 @@ class DefaultControllerTest extends WebTestCase
     public function providerRouteProvider()
     {
         return [
-            ['/login/facebook','https://www.facebook.com/v2.0/dialog/oauth?'],
+            ['/login/facebook','https://www.facebook.com/v2.7/dialog/oauth?'],
             ['/login/google', 'https://accounts.google.com/o/oauth2/auth?'],
         ];
     }
