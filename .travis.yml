@@ -11,5 +11,4 @@ before_install:
 install:
     - composer install --no-interaction --prefer-source
 
-script: phpunit -c app/
-
+script: phpunit -c ./
